@@ -1,4 +1,4 @@
-const AlbumImage = ({src,shildren}) =>(
+const AlbumImage = ({src,children}) =>(
     <div>
         <img src={src} width="300" height="300" className="rotate"/>
         {children}
