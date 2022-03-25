@@ -1,18 +1,17 @@
 import './App.css';
-import data from './item/item.js'
-import {AlbumImage,AlbumDesc, AlbumName, ButtonUrl} from './component/comp/index.js';
+import data from './simple/simple.js'
+import {AlbumImage, AlbumName, ButtonUrl, AlbumDesc} from './components/somecomponent/index.js'
+
+
 function App() {
   return (
     <div className="App">
-      <div>
-        <img src={data.album.images[0].url} width="300" height="300" className="rotate" />
-      </div>
-      <div>
-        <h2>{data.name}</h2>
-        <h3>{data.album.name}</h3>
-        <p>{data.artists[0].name}</p>
-	      <button><a href={data.album.artists[0].external_urls.spotify}>select</a></button>
-      </div>
+      <AlbumImage src={data.album.images[0].url}>
+        <AlbumDesc name={data.name}/>
+      </AlbumImage>
+      <AlbumName name={data.album.name} artist={data.artists[0].name}>
+        < ButtonUrl url={data.album.artists[0].external_urls.spotify} />
+      </ AlbumName>
     </div>
   );
 }
