@@ -1,6 +1,6 @@
 import './App.css';
 import data from './item/item.js'
-
+import {AlbumImage,AlbumDesc, AlbumName, ButtonUrl} from './component/comp/index.js';
 function App() {
   return (
     <div className="App">
@@ -11,7 +11,7 @@ function App() {
         <h2>{data.name}</h2>
         <h3>{data.album.name}</h3>
         <p>{data.artists[0].name}</p>
-	<button><a href={data.album.artists[0].external_urls.spotify}>select</a></button>
+	      <button><a href={data.album.artists[0].external_urls.spotify}>select</a></button>
       </div>
     </div>
   );
