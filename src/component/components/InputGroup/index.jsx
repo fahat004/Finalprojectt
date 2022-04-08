@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function InputGroup({ children }) {
   return (
@@ -6,4 +7,8 @@ export default function InputGroup({ children }) {
       {children}
     </div>
   )
+}
+
+InputGroup.propTypes = {
+  children: PropTypes.node.isRequired,
 }
