@@ -7,7 +7,7 @@ import Input from '../Input';
 import InputGroup from '../InputGroup';
 import './index.css';
 import PropTypes from 'prop-types';
-import { logout } from '../../slice/authSlice';
+import { logout } from '../../../slice/authSlice';
 
 export default function CreatePlaylistForm({ uriTracks }) {
   const accessToken = useSelector((state) => state.auth.accessToken);

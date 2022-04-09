@@ -6,12 +6,12 @@ import Button from '../components/Button';
 import config from '../config/config';
 import { useDocumentTitle } from '../config/customHooks';
 import { getUserProfile } from '../config/fetchApi';
-import { login } from '../slice/authSlice';
+import { login } from '../../slice/authSlice';
 
 export default function Auth() {
   const dispatch = useDispatch();
   const history = useHistory();
-  useDocumentTitle('Auth - Spotipy');
+  useDocumentTitle('Auth - Spotify');
 
   useEffect(() => {
     const accessTokenParams = new URLSearchParams(window.location.hash).get('#access_token');
@@ -45,7 +45,7 @@ export default function Auth() {
     return 'https://accounts.spotify.com/authorize?' + 
       `client_id=${clientId}` +
       `&response_type=token` +
-      `&redirect_uri=http://localhost:3000/my-app` +
+      `&redirect_uri=http://localhost:3000/myapp` +
       `&state=${state}` +
       `&scope=${config.SPOTIFY_SCOPE}`;
   }

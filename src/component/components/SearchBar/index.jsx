@@ -6,7 +6,7 @@ import Input from '../Input';
 import { searchTrack } from '../../config/fetchApi';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../slice/authSlice';
+import { logout } from '../../../slice/authSlice';
 
 export default function SearchBar({ onSuccess, onClearSearch }) {
   const accessToken = useSelector((state) => state.auth.accessToken);
