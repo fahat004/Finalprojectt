@@ -20,17 +20,36 @@ export default function Button({ children, type, variant, className, onClick, hr
 
     if (external) {
       return (
-        <a href={href} className={classButton.join(' ')}>{children}</a>
+        <a 
+          href={href} 
+          className={classButton.join(' ')}
+          {...props}
+          >
+            {children}
+        </a>
       )
     }
     
     return (
-      <Link to={href} className={classButton.join(' ')}>{children}</Link>
+      <Link 
+        to={href} 
+        className={classButton.join(' ')}
+        {...props}
+        >
+         {children}
+      </Link>
     )
   }
 
   return (
-    <button type={type} className={classButton.join(' ')} onClick={onClick}>{children}</button>
+    <button 
+      type={type} 
+      className={classButton.join(' ')} 
+      onClick={onClick}
+      {...props}
+      >
+        {children}
+    </button>
   )
 }
 

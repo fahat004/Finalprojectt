@@ -56,4 +56,4 @@ export default function Auth() {
       <Button href={getSpotifyLinkAuthorize()} external>Authorize</Button>
     </main>
   )
-}
+};
