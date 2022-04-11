@@ -23,7 +23,7 @@ export default function Button({ children, type, variant, className, onClick, hr
         <a 
           href={href} 
           className={classButton.join(' ')}
-          {...props}
+
           >
             {children}
         </a>
@@ -34,7 +34,6 @@ export default function Button({ children, type, variant, className, onClick, hr
       <Link 
         to={href} 
         className={classButton.join(' ')}
-        {...props}
         >
          {children}
       </Link>
@@ -46,7 +45,7 @@ export default function Button({ children, type, variant, className, onClick, hr
       type={type} 
       className={classButton.join(' ')} 
       onClick={onClick}
-      {...props}
+      
       >
         {children}
     </button>
