@@ -3,10 +3,11 @@ import Button from '../Button';
 import './index.css';
 import PropTypes from 'prop-types';
 import Input from '../Input';
-import { searchTrack } from '../../config/fetchApi';
+import { searchTrack } from '../../lib/fetchApi';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../../slice/authSlice';
+import { logout } from '../../slice/authSlice';
+import { FaSearch } from "react-icons/fa";
 
 export default function SearchBar({ onSuccess, onClearSearch }) {
   const accessToken = useSelector((state) => state.auth.accessToken);
@@ -47,13 +48,13 @@ export default function SearchBar({ onSuccess, onClearSearch }) {
       <form className="form-search" onSubmit={handleSubmit}>
         <Input
           type="text"
-          placeholder="Search..."
+          placeholder="Search track..."
           className="form-search__input"
           required
           value={text}
           onChange={handleInput}
         />
-        <Button type="submit">Search</Button>
+        <Button type="submit"><FaSearch /></Button>
       </form>
 
       {!isClear && (
@@ -66,4 +67,4 @@ export default function SearchBar({ onSuccess, onClearSearch }) {
 SearchBar.propTypes = {
   onSuccess: PropTypes.func.isRequired,
   onClearSearch: PropTypes.func.isRequired,
-}
+};
