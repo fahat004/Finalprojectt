@@ -3,10 +3,10 @@ import Button from '../components/Button'
 import { useDocumentTitle } from '../config/customHooks'
 
 export default function NotFound() {
-  useDocumentTitle('Not Found - Spotipy')
+  useDocumentTitle('Not Found - Spotify')
   return (
     <main className="center">
-      No Content Here...
+      Not Found Page...
       <Button href="/create-playlist">Go To Content</Button>
     </main>
   )

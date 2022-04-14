@@ -1,15 +1,10 @@
 import React from 'react';
-import './index.css';
+import './index.scss';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export default function Button({ children, type, variant, className, onClick, href, external }) {
-  const classButton = ['btn'];
-
-  
-  if (variant !== 'primary') {
-    classButton.push(`btn--${variant}`);
-  }
+  const classButton = ['btn', `btn--${variant}`];
 
   if (className !== '') {
     classButton.push(className);
@@ -23,7 +18,7 @@ export default function Button({ children, type, variant, className, onClick, hr
         <a 
           href={href} 
           className={classButton.join(' ')}
-
+          
           >
             {children}
         </a>
@@ -34,6 +29,7 @@ export default function Button({ children, type, variant, className, onClick, hr
       <Link 
         to={href} 
         className={classButton.join(' ')}
+        
         >
          {children}
       </Link>
@@ -48,7 +44,7 @@ export default function Button({ children, type, variant, className, onClick, hr
       
       >
         {children}
-    </button>
+        </button>
   )
 }
 

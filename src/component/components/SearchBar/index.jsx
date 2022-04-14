@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Button from '../Button';
-import './index.css';
+import './index.scss';
 import PropTypes from 'prop-types';
 import Input from '../Input';
-import { searchTrack } from '../../lib/fetchApi';
+import { searchTrack } from '../../config/fetchApi';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../slice/authSlice';
+import { logout } from '../../../slice/authSlice';
 import { FaSearch } from "react-icons/fa";
 
 export default function SearchBar({ onSuccess, onClearSearch }) {
