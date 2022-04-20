@@ -1,8 +1,8 @@
 import React from 'react';
-import { logout } from '../../slice/authSlice';
-import Logo from '../Logo';
+import { logout } from '../../../slice/authSlice';
+import Logo from '../Noun';
 import { Box, HStack, Button } from '@chakra-ui/react';
-import { useAppDispatch } from '../../store';
+import { useAppDispatch } from '../../../store';
 
 const Navbar: React.FC = () => {
   const dispatch = useAppDispatch();

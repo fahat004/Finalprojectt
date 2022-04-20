@@ -1,70 +1,79 @@
-import React, { useState } from 'react';
-import Button from '../Button';
-import './index.scss';
-import PropTypes from 'prop-types';
-import Input from '../Input';
+import React, { ChangeEventHandler, FormEventHandler, useState } from 'react';
 import { searchTrack } from '../../config/fetchApi';
 import { toast } from 'react-toastify';
-import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../../slice/authSlice';
 import { FaSearch } from "react-icons/fa";
+import { Box, Button, Flex, Input } from '@chakra-ui/react';
+import { useAppDispatch, useAppSelector } from '../../../store';
+import axios from 'axios';
+import { ResponseTracks, Track } from '../../../types/track';
 
-export default function SearchBar({ onSuccess, onClearSearch }) {
-  const accessToken = useSelector((state) => state.auth.accessToken);
-  const [text, setText] = useState('');
-  const [isClear, setIsClear] = useState(true);
-  const dispatch = useDispatch();
+interface IProps {
+  onSuccess: (tracks: Track[], text: string) => void;
+  onClearSearch: () => void;
+}
 
-  const handleInput = (e) => {
+const SearchBar: React.FC<IProps> = ({ onSuccess, onClearSearch }) => {
+  const accessToken: string = useAppSelector((state) => state.auth.accessToken);
+  const [text, setText] = useState<string>('');
+  const [isClear, setIsClear] = useState<boolean>(true);
+  const dispatch = useAppDispatch();
+
+  const handleInput: ChangeEventHandler<HTMLInputElement> = (e) => {
     setText(e.target.value);
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit: FormEventHandler<HTMLDivElement> & FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await searchTrack(text, accessToken);
+      const response: ResponseTracks = await searchTrack(text, accessToken);
 
-      const tracks = response.tracks.items;
+      const tracks: Track[] = response.tracks.items;
       onSuccess(tracks, text);
       setIsClear(false);
     } catch (error) {
-      if (error.response.status === 401) {
-        dispatch(logout());
-      } else {
+      if (axios.isAxiosError(error)) {
+        if (error.response?.status === 401) {
+          dispatch(logout());
+        }
+      } else if (error instanceof Error) {
         toast.error(error.message);
       }
     }
   }
 
-  const handleClear = () => {
+  const handleClear: () => void = () => {
     onClearSearch();
     setText('');
     setIsClear(true);
   }
 
   return (
-    <div>
-      <form className="form-search" onSubmit={handleSubmit}>
+    <Box>
+      <Flex as="form" gap={3} onSubmit={handleSubmit}>
         <Input
-          type="text"
           placeholder="Search track..."
-          className="form-search__input"
           required
           value={text}
           onChange={handleInput}
+          data-testid="search-input"
         />
-        <Button type="submit"><FaSearch /></Button>
-      </form>
+        <Button
+          type="submit"
+          data-testid="search-button"
+          aria-label="search button"
+          disabled={text.length === 0}
+        >
+          <FaSearch />
+        </Button>
+      </Flex>
 
       {!isClear && (
-        <Button variant="text" onClick={handleClear} className="mt-1">Clear search</Button>
+        <Button variant="link" onClick={handleClear} mt={1}>Clear search</Button>
       )}
-    </div>
+    </Box>
   )
 }
 
-SearchBar.propTypes = {
-  onSuccess: PropTypes.func.isRequired,
-  onClearSearch: PropTypes.func.isRequired,
-};
+export default SearchBar;

@@ -1,11 +1,11 @@
+import React, { useEffect } from 'react';
 import CreatePlaylist from './component/pages/CreatePlaylist';
 import { useLocation, Switch, Route } from 'react-router-dom';
 import Auth from './component/pages/Auth';
 import GuardRoute from './component/components/GuardRoute';
 import NotFound from './component/pages/NotFound';
-import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from './store';
 import { login, logout } from './slice/authSlice';
+import { useAppDispatch, useAppSelector } from './store';
 import { User } from './types/user';
 
 const App: React.FC = () => {
