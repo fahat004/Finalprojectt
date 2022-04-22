@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Track from '../../component/Track';
+import Track from '../../component/TrackSong';
 import SearchBar from '../../component/SearchBar';
 import CreatePlaylistForm from '../../component/CreatePlaylistForm';
 import Layout from '../../component/Display';
@@ -61,7 +61,7 @@ const CreatePlaylist: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Create playlist - Spotify</title>
+        <title>Create playlist</title>
       </Helmet>
 
       <Layout>

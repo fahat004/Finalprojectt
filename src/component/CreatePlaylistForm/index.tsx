@@ -107,7 +107,7 @@ const CreatePlaylistForm: React.FC<IProps> = ({ uriTracks }) => {
   return (
     <VStack justify="center">
       <Box>
-        <Heading as="h3" size="lg">Create Playlist</Heading>
+        <Heading as="h3" size="lg">Create Playlist Song</Heading>
       </Box>
 
       <Box
@@ -118,7 +118,7 @@ const CreatePlaylistForm: React.FC<IProps> = ({ uriTracks }) => {
         width={{ base: '100%', sm: '400px' }}
       >
         <FormControl isInvalid={errorForm.title.length > 0} isRequired>
-          <FormLabel htmlFor="title-playlist">Title</FormLabel>
+          <FormLabel htmlFor="title-playlist">Type The Title Please...</FormLabel>
           <Input
             id="title-playlist"
             name="title"
@@ -133,7 +133,7 @@ const CreatePlaylistForm: React.FC<IProps> = ({ uriTracks }) => {
         </FormControl>
 
         <FormControl isInvalid={errorForm.description.length > 0} isRequired>
-          <FormLabel htmlFor="description-playlist">Description</FormLabel>
+          <FormLabel htmlFor="description-playlist">Type The Description Here...</FormLabel>
           <Textarea
             id="description-playlist"
             placeholder="Description of playlist"

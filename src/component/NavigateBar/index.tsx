@@ -9,11 +9,11 @@ const Navbar: React.FC = () => {
 
   return (
     <Box as="nav" bg="primary.500" py={3} pos="sticky" zIndex={9999} top={0}>
-      <HStack justify="space-between" className="container">
+      <HStack justify="space-between" className="container" color="white">
         <Logo />
 
         <Box>
-          <Button colorScheme="primary" onClick={() => dispatch(logout())}>Logout</Button>
+          <Button fontWeight="Bold" color="black" colorScheme="primary" onClick={() => dispatch(logout())}>Logout</Button>
         </Box>
       </HStack>
     </Box>

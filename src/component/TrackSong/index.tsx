@@ -32,8 +32,8 @@ const Track: React.FC<IProps> = ({ imageUrl, title, artist, select, toggleSelect
       direction={{ base: 'row', sm: 'column' }}
       overflow="hidden"
       borderRadius={10}
-      border="1px solid"
-      borderColor="gray.200"
+      border="5px solid"
+      borderColor="green.200"
       role="group"
       _hover={{
         boxShadow: '0px 7px 15px -7px rgba(0, 0, 0, 0.1)',

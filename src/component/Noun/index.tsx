@@ -4,7 +4,7 @@ import React from 'react';
 const Logo: React.FC = () => {
   return (
     <Box>
-      <Text fontWeight="bold" color="white">Spotify.</Text>
+      <Text  fontWeight="Bold" color="black">Spotify MY-APP.</Text>
     </Box>
   )
 }
