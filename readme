@@ -1,0 +1,16 @@
+1.Nama aplikasi dan deskripsi
+Nama Aplikasi= My-App
+Deskripsi Aplikasi: Aplikasi yang bertujuan untuk membuat playlist lagu dengan menggunaka spotify development
+
+2. Fitur 
+a. Halaman Authorize: Login (membuat aplikasi menjadi lebih privasi)
+b. Search Song (Bertujuan untuk memudahkan pencarian lagu dengan bonus images )
+c. Create Playlist(Berfungsi untuk membuat playlist lagu sehingga tak perlu mencari lagi lagu kesukaan)
+
+3. Cara Instal dan Jalankan Aplikasi
+a. Clone terlebih dahulu
+b. pergi menuju file atau folder aplikasi
+c.kemudian instal depedencies (npm install)
+d.menyiapkan environment (masukan id client)
+e.kemudian run aplikasi (npm run)
+f.kemudian buka lah redirect url (https://localhost:3000/)
