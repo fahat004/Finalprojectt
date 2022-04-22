@@ -20,7 +20,7 @@ const NotFound: React.FC = () => {
         </Link>
       </Box>
     </>
-  )
-}
+  );
+};
 
 export default NotFound;

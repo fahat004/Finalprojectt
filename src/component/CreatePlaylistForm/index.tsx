@@ -49,7 +49,7 @@ const CreatePlaylistForm: React.FC<IProps> = ({ uriTracks }) => {
 
     setForm({ ...form, [name]: value });
     setErrorForm({ ...errorForm, [name]: '' });
-  }
+  };
 
   const validateForm: TValidateForm = () => {
     let isValid: boolean = true;
@@ -71,7 +71,7 @@ const CreatePlaylistForm: React.FC<IProps> = ({ uriTracks }) => {
     }
 
     return isValid;
-  }
+  };
 
   const handleSubmit: FormEventHandler<HTMLDivElement> & FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
@@ -102,7 +102,7 @@ const CreatePlaylistForm: React.FC<IProps> = ({ uriTracks }) => {
         toast.error('Please select at least one track');
       }
     }
-  }
+  };
 
   return (
     <VStack justify="center">
@@ -152,7 +152,7 @@ const CreatePlaylistForm: React.FC<IProps> = ({ uriTracks }) => {
         </HStack>
       </Box>
     </VStack>
-  )
-}
+  );
+};
 
 export default CreatePlaylistForm;

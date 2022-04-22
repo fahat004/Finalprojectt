@@ -12,7 +12,7 @@ const Layout: React.FC<IProps> = ({ children }) => {
 
       {children}
     </div>
-  )
-}
+  );
+};
 
 export default Layout;

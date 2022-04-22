@@ -6,7 +6,7 @@ const Logo: React.FC = () => {
     <Box>
       <Text  fontWeight="Bold" color="black">Spotify MY-APP</Text>
     </Box>
-  )
-}
+  );
+};
 
 export default Logo;

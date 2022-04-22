@@ -25,7 +25,7 @@ const Track: React.FC<IProps> = ({ imageUrl, title, artist, select, toggleSelect
   const handleToggleSelect: () => void = () => {
     setIsSelected(!isSelected);
     toggleSelect();
-  }
+  };
 
   return (
     <Stack
@@ -95,6 +95,6 @@ const Track: React.FC<IProps> = ({ imageUrl, title, artist, select, toggleSelect
       </VStack>
     </Stack>
   );
-}
+};
 
 export default Track;

@@ -4,10 +4,10 @@ import { toast } from 'react-toastify';
 import config from '../../config/config';
 import { getUserProfile } from '../../config/fetchApi';
 import { login } from '../../slice/authSlice';
-import { Box, Button, Link, Text } from '@chakra-ui/react'
+import { Box, Button, Link, Text } from '@chakra-ui/react';
 import { User } from '../../types/user';
 import { useAppDispatch } from '../../store';
-import { Helmet } from "react-helmet-async";
+import { Helmet } from 'react-helmet-async';
 
 const Auth : React.FC = () => {
   const dispatch = useAppDispatch();
@@ -47,10 +47,10 @@ const Auth : React.FC = () => {
     return 'https://accounts.spotify.com/authorize?' +
       `client_id=${clientId}` +
       '&response_type=token' +
-      `&redirect_uri=http://localhost:3000/` +
+      '&redirect_uri=http://localhost:3000/' +
       `&state=${state}` +
       `&scope=${config.SPOTIFY_SCOPE}`;
-  }
+  };
 
   return (
     <>
@@ -68,7 +68,7 @@ const Auth : React.FC = () => {
         </Box>
       </main>
     </>
-  )
-}
+  );
+};
 
 export default Auth;

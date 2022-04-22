@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Track from '../../component/TrackSong';
 import SearchBar from '../../component/SearchBar';
 import CreatePlaylistForm from '../../component/CreatePlaylistForm';
@@ -38,13 +38,13 @@ const CreatePlaylist: React.FC = () => {
 
       return _tracks;
     });
-  }
+  };
 
   const clearSearch: () => void = () => {
     setTracks(selectedTracks);
     setMessage('No tracks');
     setIsInSearch(false);
-  }
+  };
 
   const toggleSelect: (track: ITrack) => void = (track) => {
     const uri: string = track.uri;
@@ -56,7 +56,7 @@ const CreatePlaylist: React.FC = () => {
       setSelectedTracksUri([...selectedTracksUri, uri]);
       setSelectedTracks([...selectedTracks, track]);
     }
-  }
+  };
 
   return (
     <>
@@ -101,6 +101,6 @@ const CreatePlaylist: React.FC = () => {
       </Layout>
     </>
   );
-}
+};
 
 export default CreatePlaylist;

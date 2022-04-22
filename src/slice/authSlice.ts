@@ -11,7 +11,7 @@ const initialState: IInitialState = {
   accessToken: '',
   isAuthorized: false,
   user: null,
-}
+};
 
 export const authSlice = createSlice({
   name: 'auth',

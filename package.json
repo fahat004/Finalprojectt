@@ -20,6 +20,7 @@
     "authorizenet": "^1.0.8",
     "axios": "^0.26.1",
     "eslint-config": "^0.3.0",
+    "eslint-config-react-app": "^7.0.1",
     "framer-motion": "^6.3.0",
     "install": "^0.13.0",
     "next-auth": "^4.3.3",
