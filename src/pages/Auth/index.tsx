@@ -47,7 +47,7 @@ const Auth : React.FC = () => {
     return 'https://accounts.spotify.com/authorize?' +
       `client_id=${clientId}` +
       '&response_type=token' +
-      `&redirect_uri=${config.HOST}` +
+      `&redirect_uri=http://localhost:3000/` +
       `&state=${state}` +
       `&scope=${config.SPOTIFY_SCOPE}`;
   }

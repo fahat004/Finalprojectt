@@ -8,7 +8,7 @@ interface IInitialState {
 }
 
 const initialState: IInitialState = {
-  accessToken: '',
+  accessToken: 'e3ef4ba369764a2d81a3edf88707f029',
   isAuthorized: false,
   user: null,
 }
