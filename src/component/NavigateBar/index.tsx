@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
 
   return (
     <Box as="nav" bg="primary.500" py={3} pos="sticky" zIndex={9999} top={0}>
-      <HStack justify="space-between" className="container" color="white">
+      <HStack justify="space-between" className="container">
         <Logo />
 
         <Box>
